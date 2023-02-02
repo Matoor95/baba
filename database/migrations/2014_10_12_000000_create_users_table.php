@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId('groupe_id')->constrained('groupes')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
